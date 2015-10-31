@@ -4,11 +4,13 @@
 void ofApp::setup(){
     editor = *new ofxSplineEditor();
     editor.setup();
+    walker.setup(&editor.spline, 1);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     editor.update();
+    walker.update();
 }
 
 //--------------------------------------------------------------
@@ -17,6 +19,8 @@ void ofApp::draw(){
     editor.draw();
     ofSetColor(255, 0, 0);
     ofCircle(mouseX, mouseY, 2);
+    
+    ofCircle(walker.position, 10);
 }
 
 //--------------------------------------------------------------

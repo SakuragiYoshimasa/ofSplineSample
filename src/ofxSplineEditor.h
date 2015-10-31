@@ -10,7 +10,6 @@
 #define ofxSplineEditor_h
 
 #include "ofMain.h"
-#include "ofxSpline.h"
 #include "BezierCurve.h"
 #include "BezierSpline.h"
 #include "ofxGui.h"

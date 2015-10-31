@@ -78,6 +78,20 @@ ControlMode BezierSpline::GetControlPointMode(int index){
     return modes[(index + 1) / 3];
 }
 
+ofVec3f BezierSpline::GetPoint(float t){
+    if(t >= 1) t = 1;
+    if(t < 0) t = 0;
+    int i;
+    t = t * float(curveNum);
+    i = int(t);
+    t -= i;
+    i *= 3;
+    
+
+    cout << "index:" << i << " t:" << t << endl;
+    return GetPoint(t , i);
+}
+
 void BezierSpline::addCurve(){
     
     ofVec3f point = points[points.size() - 1];
@@ -91,7 +105,6 @@ void BezierSpline::addCurve(){
     point.y += ofRandom(50);
     points.push_back(point);
     curveNum++;
-    
     modes.push_back(modes[modes.size() - 1]);
     EnforceMode(points.size() - 4);
 }

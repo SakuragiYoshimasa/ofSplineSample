@@ -38,6 +38,7 @@
 		FABC4C691BE46AA30029F875 /* BezierCurve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FABC4C671BE46AA30029F875 /* BezierCurve.cpp */; };
 		FABC4C6C1BE477E70029F875 /* Bezier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FABC4C6A1BE477E70029F875 /* Bezier.cpp */; };
 		FABC4C6F1BE489B40029F875 /* BezierSpline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FABC4C6D1BE489B40029F875 /* BezierSpline.cpp */; };
+		FABC4C721BE4B5760029F875 /* SplineWalker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FABC4C701BE4B5760029F875 /* SplineWalker.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,8 @@
 		FABC4C6B1BE477E70029F875 /* Bezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bezier.h; sourceTree = "<group>"; };
 		FABC4C6D1BE489B40029F875 /* BezierSpline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BezierSpline.cpp; sourceTree = "<group>"; };
 		FABC4C6E1BE489B40029F875 /* BezierSpline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierSpline.h; sourceTree = "<group>"; };
+		FABC4C701BE4B5760029F875 /* SplineWalker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SplineWalker.cpp; sourceTree = "<group>"; };
+		FABC4C711BE4B5760029F875 /* SplineWalker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplineWalker.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +264,8 @@
 				FABC4C681BE46AA30029F875 /* BezierCurve.h */,
 				FABC4C6A1BE477E70029F875 /* Bezier.cpp */,
 				FABC4C6B1BE477E70029F875 /* Bezier.h */,
+				FABC4C701BE4B5760029F875 /* SplineWalker.cpp */,
+				FABC4C711BE4B5760029F875 /* SplineWalker.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -366,6 +371,7 @@
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
+				FABC4C721BE4B5760029F875 /* SplineWalker.cpp in Sources */,
 				FABC4C691BE46AA30029F875 /* BezierCurve.cpp in Sources */,
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
 				FABC4C6C1BE477E70029F875 /* Bezier.cpp in Sources */,

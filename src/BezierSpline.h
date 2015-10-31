@@ -20,6 +20,7 @@ public:
     int curveNum;
     void reset();
     void addCurve();
+    ofVec3f GetPoint(float t);
     ofVec3f GetPoint(float t, int curveIndex);
     ofVec3f GetVelocity(float t, int curveIndex);
     ofVec3f GetDirection(float t ,int curveIndex);
