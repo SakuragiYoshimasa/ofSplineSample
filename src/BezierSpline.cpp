@@ -118,5 +118,5 @@ ofVec3f BezierSpline::GetVelocity(float t, int curveIndex){
 }
 
 ofVec3f BezierSpline::GetDirection(float t ,int curveIndex){
-    return (GetVelocity(t, curveIndex)).normalized() * 100;
+    return (GetVelocity(t, curveIndex));
 }

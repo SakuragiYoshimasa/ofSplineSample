@@ -24,4 +24,7 @@ class ofApp : public ofBaseApp{
     ofxSplineEditor editor;
     SplineWalker walker;
     int mouseX,mouseY;
+    ofEasyCam cam;
+    ofCamera walkerCamera;
+    bool walkerMode;
 };

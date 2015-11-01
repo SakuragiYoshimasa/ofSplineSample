@@ -15,10 +15,24 @@ void ofxSplineEditor::setup(){
     gui.add(addCurve.setup("AddCurve",false));
     gui.add(pointSize.setup("PointSize",5,0,100));
     gui.add(editPointMode.setup("EditPointMode",true));
+    gui.add(savePoints.setup("save",false));
+    gui.add(loadPoints.setup("load", false));
+}
+
+void ofxSplineEditor::drawgui(){
+    gui.draw();
 }
 
 void ofxSplineEditor::draw(){
-    gui.draw();
+    ofSetColor(255, 255, 255, 50);
+    for(int x = 0; x < 1000; x += 100){
+        for(int y = 0; y < 1000; y +=100){
+            for(int z = -500; z < 500; z += 100){
+                ofDrawSphere(x, y, z, 3);
+            }
+        }
+    }
+    ofSetLineWidth(3);
     ofPath line = ofPath();
     line.setStrokeColor(ofColor(255,255,255));
     line.setFilled(false);
@@ -47,6 +61,21 @@ void ofxSplineEditor::update(){
     if(addCurve) {
         spline.addCurve();
         addCurve = false;
+    }
+    if(savePoints){
+        csvOperator::saveSplinePoints(spline.points);
+        savePoints = false;
+    }
+    if(loadPoints){
+        spline.points = csvOperator::loadSplinePoints();
+        spline.curveNum = (spline.points.size() - 1)/3;
+        for(int i = 0; i < spline.curveNum; i++){
+            spline.modes.push_back(MIRRORED);
+            spline.EnforceMode(i * 3);
+            spline.EnforceMode(i * 3 + 1);
+            spline.EnforceMode(i * 3 + 2);
+        }
+        loadPoints = false;
     }
     editPointIndex.setup("editPointIndex",editPointIndex,0,spline.points.size());
 }

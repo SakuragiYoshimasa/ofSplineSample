@@ -13,6 +13,7 @@
 #include "BezierCurve.h"
 #include "BezierSpline.h"
 #include "ofxGui.h"
+#include "csvOperator.h"
 
 class ofxSplineEditor {
 public:
@@ -20,6 +21,7 @@ public:
    
     void setup();
     void draw();
+    void drawgui();
     void update();
     
     ofxPanel gui;
@@ -27,6 +29,8 @@ public:
     ofxToggle drawDirectionButton;
     ofxToggle addCurve;
     ofxToggle editPointMode;
+    ofxToggle savePoints;
+    ofxToggle loadPoints;
     ofxFloatSlider pointSize;
     
     void setControlPoint(ofVec3f point);

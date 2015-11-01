@@ -34,6 +34,7 @@
 		E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E715D3B6510020DFD4 /* QTKit.framework */; };
 		E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F985F515E0DE99003869B5 /* Accelerate.framework */; };
 		F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E112B3AEBEA2C091BF2B40AE /* ofxPanel.cpp */; };
+		FA1CF47C1BE64E4D005875D7 /* csvOperator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA1CF47A1BE64E4D005875D7 /* csvOperator.cpp */; };
 		FABC4C631BE4662E0029F875 /* ofxSplineEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FABC4C611BE4662E0029F875 /* ofxSplineEditor.cpp */; };
 		FABC4C691BE46AA30029F875 /* BezierCurve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FABC4C671BE46AA30029F875 /* BezierCurve.cpp */; };
 		FABC4C6C1BE477E70029F875 /* Bezier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FABC4C6A1BE477E70029F875 /* Bezier.cpp */; };
@@ -112,6 +113,8 @@
 		E7E077E715D3B6510020DFD4 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		E7F985F515E0DE99003869B5 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = /System/Library/Frameworks/Accelerate.framework; sourceTree = "<absolute>"; };
 		ECF8674C7975F1063C5E30CA /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxGuiGroup.cpp; path = ../../../addons/ofxGui/src/ofxGuiGroup.cpp; sourceTree = SOURCE_ROOT; };
+		FA1CF47A1BE64E4D005875D7 /* csvOperator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = csvOperator.cpp; sourceTree = "<group>"; };
+		FA1CF47B1BE64E4D005875D7 /* csvOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = csvOperator.h; sourceTree = "<group>"; };
 		FABC4C611BE4662E0029F875 /* ofxSplineEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSplineEditor.cpp; sourceTree = "<group>"; };
 		FABC4C621BE4662E0029F875 /* ofxSplineEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSplineEditor.h; sourceTree = "<group>"; };
 		FABC4C671BE46AA30029F875 /* BezierCurve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BezierCurve.cpp; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 				FABC4C6B1BE477E70029F875 /* Bezier.h */,
 				FABC4C701BE4B5760029F875 /* SplineWalker.cpp */,
 				FABC4C711BE4B5760029F875 /* SplineWalker.h */,
+				FA1CF47A1BE64E4D005875D7 /* csvOperator.cpp */,
+				FA1CF47B1BE64E4D005875D7 /* csvOperator.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -374,6 +379,7 @@
 				FABC4C721BE4B5760029F875 /* SplineWalker.cpp in Sources */,
 				FABC4C691BE46AA30029F875 /* BezierCurve.cpp in Sources */,
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
+				FA1CF47C1BE64E4D005875D7 /* csvOperator.cpp in Sources */,
 				FABC4C6C1BE477E70029F875 /* Bezier.cpp in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,

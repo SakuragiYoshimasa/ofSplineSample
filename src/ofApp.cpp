@@ -11,21 +11,31 @@ void ofApp::setup(){
 void ofApp::update(){
     editor.update();
     walker.update();
+    if(walkerMode){
+        walkerCamera.setPosition(walker.position);
+        walkerCamera.lookAt(walker.direction);
+    }
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    
+    ofBackground(0);
+    editor.drawgui();
+    if(walkerMode){walkerCamera.begin();}else{cam.begin();}
+    ofPushMatrix();
+    if(!walkerMode) ofTranslate(-ofGetWidth()/2, -ofGetHeight()/2);
     editor.draw();
     ofSetColor(255, 0, 0);
+    if(walkerMode) ofSetColor(200, 0, 0,100);
+    ofDrawBox(walker.position, 10);
+    ofPopMatrix();
+    if(walkerMode){walkerCamera.end();}else{cam.end();}
     ofCircle(mouseX, mouseY, 2);
-    
-    ofCircle(walker.position, 10);
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+    if(key == ' ') walkerMode = !walkerMode;
 }
 
 //--------------------------------------------------------------
