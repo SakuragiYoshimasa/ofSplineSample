@@ -18,8 +18,8 @@ void BezierSpline::reset(){
     
     modes.clear();
 
-    modes.push_back(ALIGNED);
-    modes.push_back(ALIGNED);
+    modes.push_back(MIRRORED);
+    modes.push_back(MIRRORED);
 }
 
 void BezierSpline::EnforceMode(int index){
