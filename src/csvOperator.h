@@ -13,7 +13,7 @@
 
 class csvOperator {
 public:
-    static void saveSplinePoints(vector<ofVec3f> points);
-    static vector<ofVec3f> loadSplinePoints();
+    static void saveSplinePoints(string fileName, vector<ofVec3f> points);
+    static vector<ofVec3f> loadSplinePoints(string fileName);
 };
 #endif

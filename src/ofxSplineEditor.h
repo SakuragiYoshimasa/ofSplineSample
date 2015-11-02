@@ -17,37 +17,45 @@
 
 class ofxSplineEditor {
 public:
-    BezierSpline spline;
-   
+    ofxSplineEditor(){};
     void setup();
+    void update();
     void draw();
     void drawgui();
-    void update();
+    void setFileName(string fileName);
+    void setStrokeWidth(float width);
+    BezierSpline * getSpline();
+private:
     
+    void updateSpline();
+    void updateSplineFileSystem();
+    void updateSplinePoint();
+    void drawMarkPoint();
+    //------------------------------------
+    //GUI
+    //------------------------------------
     ofxPanel gui;
     ofxIntSlider editPointIndex;
     ofxToggle drawDirectionButton;
+    ofxToggle drawControlLine;
     ofxToggle addCurve;
     ofxToggle editPointMode;
     ofxToggle savePoints;
     ofxToggle loadPoints;
     ofxFloatSlider pointSize;
+    ofxFloatSlider adjustScale;
+    ofxButton plusX;
+    ofxButton minusX;
+    ofxButton plusY;
+    ofxButton minusY;
+    ofxButton plusZ;
+    ofxButton minusZ;
     
-    void setControlPoint(ofVec3f point);
-    /*
-     ofxIntSlider : 整数型 (int) のスライダー
-     ofxFloatSlider : 浮動小数点型 (float) のスライダー
-     ofxVec2Slider : 2次元ベクトルのスライダー
-     ofxColorSlider : カラー生成スライダー
-     ofxButton : ボタン
-     ofxToggle : トグルスイッチ
-     ofxLabel : ラベル (テキスト表示)
-     ofxPanel : GUIの外枠
-     */
-    
-    bool drawDirectionMode;
-    ofxSplineEditor(){
-        spline.reset();
-    }
+    //-------------------------------------
+    //
+    //-------------------------------------
+    BezierSpline spline;
+    float strokeWidth;
+    string fileName = "";
 };
 #endif

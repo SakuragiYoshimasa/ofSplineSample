@@ -4,7 +4,8 @@
 void ofApp::setup(){
     editor = *new ofxSplineEditor();
     editor.setup();
-    walker.setup(&editor.spline, 1);
+    editor.setFileName("testPoint");
+    walker.setup(editor.getSpline(), 5);
 }
 
 //--------------------------------------------------------------
@@ -12,8 +13,8 @@ void ofApp::update(){
     editor.update();
     walker.update();
     if(walkerMode){
-        walkerCamera.setPosition(walker.position);
-        walkerCamera.lookAt(walker.direction);
+        walkerCamera.setPosition(walker.getPosition());
+        walkerCamera.lookAt(walker.getLookAt());
     }
 }
 
@@ -27,7 +28,7 @@ void ofApp::draw(){
     editor.draw();
     ofSetColor(255, 0, 0);
     if(walkerMode) ofSetColor(200, 0, 0,100);
-    ofDrawBox(walker.position, 10);
+    ofDrawBox(walker.getPosition(), 10);
     ofPopMatrix();
     if(walkerMode){walkerCamera.end();}else{cam.end();}
     ofCircle(mouseX, mouseY, 2);
@@ -50,7 +51,6 @@ void ofApp::mouseMoved(int x, int y ){
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-    editor.setControlPoint(ofVec3f(x,y,0));
 }
 
 //--------------------------------------------------------------

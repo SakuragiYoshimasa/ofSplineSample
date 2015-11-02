@@ -117,8 +117,8 @@
 		FA1CF47B1BE64E4D005875D7 /* csvOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = csvOperator.h; sourceTree = "<group>"; };
 		FABC4C611BE4662E0029F875 /* ofxSplineEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSplineEditor.cpp; sourceTree = "<group>"; };
 		FABC4C621BE4662E0029F875 /* ofxSplineEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSplineEditor.h; sourceTree = "<group>"; };
-		FABC4C671BE46AA30029F875 /* BezierCurve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BezierCurve.cpp; sourceTree = "<group>"; };
-		FABC4C681BE46AA30029F875 /* BezierCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierCurve.h; sourceTree = "<group>"; };
+		FABC4C671BE46AA30029F875 /* BezierCurve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BezierCurve.cpp; path = src/BezierCurve.cpp; sourceTree = "<group>"; };
+		FABC4C681BE46AA30029F875 /* BezierCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BezierCurve.h; path = src/BezierCurve.h; sourceTree = "<group>"; };
 		FABC4C6A1BE477E70029F875 /* Bezier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bezier.cpp; sourceTree = "<group>"; };
 		FABC4C6B1BE477E70029F875 /* Bezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bezier.h; sourceTree = "<group>"; };
 		FABC4C6D1BE489B40029F875 /* BezierSpline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BezierSpline.cpp; sourceTree = "<group>"; };
@@ -246,6 +246,8 @@
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
+				FABC4C671BE46AA30029F875 /* BezierCurve.cpp */,
+				FABC4C681BE46AA30029F875 /* BezierCurve.h */,
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
@@ -261,10 +263,8 @@
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
 				FABC4C611BE4662E0029F875 /* ofxSplineEditor.cpp */,
 				FABC4C621BE4662E0029F875 /* ofxSplineEditor.h */,
-				FABC4C6D1BE489B40029F875 /* BezierSpline.cpp */,
 				FABC4C6E1BE489B40029F875 /* BezierSpline.h */,
-				FABC4C671BE46AA30029F875 /* BezierCurve.cpp */,
-				FABC4C681BE46AA30029F875 /* BezierCurve.h */,
+				FABC4C6D1BE489B40029F875 /* BezierSpline.cpp */,
 				FABC4C6A1BE477E70029F875 /* Bezier.cpp */,
 				FABC4C6B1BE477E70029F875 /* Bezier.h */,
 				FABC4C701BE4B5760029F875 /* SplineWalker.cpp */,
