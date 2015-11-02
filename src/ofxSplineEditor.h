@@ -24,12 +24,15 @@ public:
     void drawgui();
     void setFileName(string fileName);
     void setStrokeWidth(float width);
+    void beginEditorCam();
+    void endEditorCam();
     BezierSpline * getSpline();
 private:
     
     void updateSpline();
     void updateSplineFileSystem();
     void updateSplinePoint();
+    void updateCameraPosition();
     void drawMarkPoint();
     //------------------------------------
     //GUI
@@ -42,6 +45,7 @@ private:
     ofxToggle editPointMode;
     ofxToggle savePoints;
     ofxToggle loadPoints;
+    ofxLabel editPointLabel;
     ofxFloatSlider pointSize;
     ofxFloatSlider adjustScale;
     ofxButton plusX;
@@ -50,11 +54,20 @@ private:
     ofxButton minusY;
     ofxButton plusZ;
     ofxButton minusZ;
+    ofxLabel cameraLabel;
+    ofxButton plusCameraX;
+    ofxButton minusCameraX;
+    ofxButton plusCameraY;
+    ofxButton minusCameraY;
+    ofxButton plusCameraZ;
+    ofxButton minusCameraZ;
     
     //-------------------------------------
     //
     //-------------------------------------
     BezierSpline spline;
+    ofEasyCam editorCam;
+    ofVec3f cameraPos;
     float strokeWidth;
     string fileName = "";
 };

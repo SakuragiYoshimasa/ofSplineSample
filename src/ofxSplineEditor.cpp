@@ -11,14 +11,15 @@
 void ofxSplineEditor::setup(){
     spline.reset();
     gui.setup();
-    gui.add(drawDirectionButton.setup("DrawDirection", true));
-    gui.add(drawControlLine.setup("DrawControlLine", true));
-    gui.add(addCurve.setup("AddCurve", false));
-    gui.add(pointSize.setup("PointSize", 5, 0, 100));
+    gui.add(editPointLabel.setup("SplineEdit", ""));
     gui.add(savePoints.setup("Save", false));
     gui.add(loadPoints.setup("Load", false));
+    gui.add(addCurve.setup("AddCurve", false));
     gui.add(editPointMode.setup("EditPointMode", false));
+    gui.add(drawDirectionButton.setup("DrawDirection", true));
+    gui.add(drawControlLine.setup("DrawControlLine", true));
     gui.add(editPointIndex.setup("EditPointIndex", 0, 0, spline.GetPointNum()));
+    gui.add(pointSize.setup("PointSize", 5, 0, 100));
     gui.add(adjustScale.setup("AdjustScale", 10, 1, 200));
     gui.add(plusX.setup("+X", false));
     gui.add(minusX.setup("-X", false));
@@ -26,13 +27,22 @@ void ofxSplineEditor::setup(){
     gui.add(minusY.setup("-Y", false));
     gui.add(plusZ.setup("+Z", false));
     gui.add(minusZ.setup("-Z", false));
+    gui.add(cameraLabel.setup("CameraPosition", ""));
+    gui.add(plusCameraX.setup("+X", false));
+    gui.add(minusCameraX.setup("-X", false));
+    gui.add(plusCameraY.setup("+Y", false));
+    gui.add(minusCameraY.setup("-Y", false));
+    gui.add(plusCameraZ.setup("+Z", false));
+    gui.add(minusCameraZ.setup("-Z", false));
     strokeWidth = 1.5;
+    cameraPos = ofVec3f(ofGetWidth()/2, ofGetHeight()/2, 0);
 }
 
 void ofxSplineEditor::update(){
     updateSpline();
     updateSplineFileSystem();
     updateSplinePoint();
+    updateCameraPosition();
     editPointIndex.setMax(spline.GetPointNum());
 }
 
@@ -65,6 +75,18 @@ void ofxSplineEditor::updateSplinePoint(){
     if(minusY) newPoint.y -= adjustScale;
     if(minusZ) newPoint.z -= adjustScale;
     spline.SetControlPoint(editPointIndex, newPoint);
+}
+
+void ofxSplineEditor::updateCameraPosition(){
+    
+    ofVec3f newCameraPos = editorCam.getPosition();
+    if(plusCameraX) newCameraPos.x += adjustScale;
+    if(plusCameraY) newCameraPos.y += adjustScale;
+    if(plusCameraZ) newCameraPos.z += adjustScale;
+    if(minusCameraX) newCameraPos.x -= adjustScale;
+    if(minusCameraY) newCameraPos.y -= adjustScale;
+    if(minusCameraZ) newCameraPos.z -= adjustScale;
+    editorCam.setPosition(newCameraPos);
 }
 
 BezierSpline * ofxSplineEditor::getSpline(){
@@ -121,6 +143,14 @@ void ofxSplineEditor::setFileName(string fileName){
 
 void ofxSplineEditor::setStrokeWidth(float width){
     strokeWidth = width;
+}
+
+void ofxSplineEditor::beginEditorCam(){
+    editorCam.begin();
+}
+
+void ofxSplineEditor::endEditorCam(){
+    editorCam.end();
 }
 
 void ofxSplineEditor::drawMarkPoint(){

@@ -2,6 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    ofBackground(0);
     editor = *new ofxSplineEditor();
     editor.setup();
     editor.setFileName("testPoint");
@@ -20,18 +21,13 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofBackground(0);
     editor.drawgui();
-    if(walkerMode){walkerCamera.begin();}else{cam.begin();}
-    ofPushMatrix();
-    if(!walkerMode) ofTranslate(-ofGetWidth()/2, -ofGetHeight()/2);
+    if(walkerMode){walkerCamera.begin();}else{editor.beginEditorCam();}
     editor.draw();
     ofSetColor(255, 0, 0);
     if(walkerMode) ofSetColor(200, 0, 0,100);
     ofDrawBox(walker.getPosition(), 10);
-    ofPopMatrix();
-    if(walkerMode){walkerCamera.end();}else{cam.end();}
-    ofCircle(mouseX, mouseY, 2);
+    if(walkerMode){walkerCamera.end();}else{editor.endEditorCam();}
 }
 
 //--------------------------------------------------------------
